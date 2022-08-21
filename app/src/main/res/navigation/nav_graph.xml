@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_basicos">
+
+    <fragment
+        android:id="@+id/nav_basicos"
+        android:name="com.cmontero.tallerdpmkotlin.basicos.BasicosFragment"
+        android:label="@string/menu_basicos"
+        tools:layout="@layout/fragment_basicos" />
+
+    <fragment
+        android:id="@+id/nav_recyclerview"
+        android:name="com.cmontero.tallerdpmkotlin.recyclerview.RecyclerviewFragment"
+        android:label="@string/menu_recyclerview"
+        tools:layout="@layout/fragment_recyclerview" />
+
+    <fragment
+        android:id="@+id/nav_usuarios"
+        android:name="com.cmontero.tallerdpmkotlin.usuarios.UsuariosFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_usuarios" />
+</navigation>
