@@ -20,6 +20,52 @@
     <fragment
         android:id="@+id/nav_usuarios"
         android:name="com.cmontero.tallerdpmkotlin.usuarios.UsuariosFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_usuarios" />
+        android:label="Usuarios"
+        tools:layout="@layout/fragment_usuarios" >
+        <action
+            android:id="@+id/action_nav_usuarios_to_newUsuarioFragment"
+            app:destination="@id/nav_newusuario" />
+        <action
+            android:id="@+id/action_nav_usuarios_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_cocteles"
+        android:name="com.cmontero.tallerdpmkotlin.cocteles.CoctelesFragment"
+        android:label="Cocteles"
+        tools:layout="@layout/fragment_cocteles" />
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.cmontero.tallerdpmkotlin.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_welcomeFragment"
+            app:destination="@id/nav_welcome" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_welcome"
+        android:name="com.cmontero.tallerdpmkotlin.login.WelcomeFragment"
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome" />
+    <fragment
+        android:id="@+id/nav_lectorqr"
+        android:name="com.cmontero.tallerdpmkotlin.lectorqr.LectorQRFragment"
+        android:label="fragment_lectorqr"
+        tools:layout="@layout/fragment_lectorqr" />
+    <fragment
+        android:id="@+id/nav_mapas"
+        android:name="com.cmontero.tallerdpmkotlin.mapas.MapsFragment"
+        android:label="Mapas"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/nav_newusuario"
+        android:name="com.cmontero.tallerdpmkotlin.usuarios.NewUsuarioFragment"
+        android:label="Agregar Usuario"
+        tools:layout="@layout/fragment_newusuario" />
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.cmontero.tallerdpmkotlin.usuarios.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" />
 </navigation>

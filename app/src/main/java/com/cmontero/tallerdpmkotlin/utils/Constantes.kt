@@ -7,6 +7,7 @@ object Constantes {
 
     const val MODO_EDICION = "modo_edicion"
     const val OBJ_USUARIO = "obj_usuario"
+    const val ID_USUARIO = "id_usuario"
 
     const val ID_COCTEL = "idCoctel"
     const val URL_IMAGEN = "urlImagenCoctel"

@@ -26,10 +26,10 @@ class UserAdapter(private val userList: List<UsuarioModel>): RecyclerView.Adapte
         holder.txtEmail.text = emailUsuario
         holder.fechaNac.text = fechaNac
 
-        /*if(sexoUsuario == "Masculino")
+        if(sexoUsuario == "Masculino")
             holder.imgFoto.setImageResource(R.drawable.user_masculino)
         else if(sexoUsuario == "Femenino")
-            holder.imgFoto.setImageResource(R.drawable.user_femenino)*/
+            holder.imgFoto.setImageResource(R.drawable.user_femenino)
 
         //val imageid = context.resources.getIdentifier(foto, "drawable", context.packageName)
         //holder.imgFoto.setImageDrawable(ContextCompat.getDrawable(context, imageid))

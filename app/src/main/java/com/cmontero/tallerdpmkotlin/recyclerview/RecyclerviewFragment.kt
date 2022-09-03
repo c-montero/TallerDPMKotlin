@@ -13,7 +13,6 @@ import com.cmontero.tallerdpmkotlin.databinding.FragmentRecyclerviewBinding
 class RecyclerviewFragment : Fragment() {
 
     private var _binding: FragmentRecyclerviewBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

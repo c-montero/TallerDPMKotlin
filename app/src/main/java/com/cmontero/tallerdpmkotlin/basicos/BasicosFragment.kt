@@ -15,7 +15,6 @@ import com.cmontero.tallerdpmkotlin.databinding.FragmentBasicosBinding
 class BasicosFragment : Fragment() {
 
     private var _binding: FragmentBasicosBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -77,7 +76,7 @@ class BasicosFragment : Fragment() {
         val estados = mutableListOf<String>()
         estados.add("Soltero")
         estados.add("Casado")
-        estados.add("Conviviente")
+        estados.add("Viudo")
         estados.add("Divorciado")
 
         val spinnerAdapter: ArrayAdapter<String> = ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_item, estados)

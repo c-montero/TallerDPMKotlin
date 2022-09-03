@@ -22,4 +22,11 @@
     <style name="Theme.TallerDPMKotlin.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.TallerDPMKotlin.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SpinnerTheme">
+        <item name="android:background">@drawable/spinner_selector</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="paddingStart">5dp</item>
+    </style>
+
 </resources>
