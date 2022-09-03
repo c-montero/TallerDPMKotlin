@@ -20,17 +20,14 @@ class NewUsuarioFragment : Fragment() {
     private var _binding: FragmentNewusuarioBinding? = null
     private val binding get() = _binding!!
     private var modoEdicion: Boolean = false
-    private var idUsuario: Int = 0
-
-
     private lateinit var daoUsuarios:DAOUsuarios
-    private lateinit var usuario: UsuarioModel
+    private var usuario: UsuarioModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             modoEdicion = it.getBoolean(Constantes.MODO_EDICION)
-            idUsuario = it.getInt(Constantes.ID_USUARIO)
+            usuario = it.getParcelable(Constantes.OBJ_USUARIO)
         }
     }
 
@@ -55,9 +52,10 @@ class NewUsuarioFragment : Fragment() {
 
         if(modoEdicion){// Editar usuario
             binding.txtMiTitulo.text = "Editar usuario"
-            usuario = daoUsuarios.obtenerUsuario(idUsuario)!!
-            binding.edtNombreUsuario.setText(usuario.nombres)
-            binding.edtEmailUsuario.setText(usuario.email)
+            binding.edtNombreUsuario.setText(usuario?.nombres)
+            binding.edtEmailUsuario.setText(usuario?.email)
+            binding.spSexoUsuario.setSelection(spinnerAdapter.getPosition(usuario?.sexo))
+            binding.edtFechaNacUsuario.setText(usuario?.fechaNac)
             binding.btnEditarUsuario.visibility = View.VISIBLE
             binding.btnGuardarUsuario.visibility = View.GONE
         }
@@ -66,7 +64,7 @@ class NewUsuarioFragment : Fragment() {
             binding.btnGuardarUsuario.visibility = View.VISIBLE
         }
 
-        binding.btnGuardarUsuario.setOnClickListener { v ->
+        binding.btnGuardarUsuario.setOnClickListener {
             try {
                 val nombres: String = binding.edtNombreUsuario.text.toString()
                 val email: String = binding.edtEmailUsuario.text.toString()
@@ -91,7 +89,7 @@ class NewUsuarioFragment : Fragment() {
                 val email: String = binding.edtEmailUsuario.text.toString()
                 val fechaNac: String = binding.edtFechaNacUsuario.text.toString()
                 val sexo: String = binding.spSexoUsuario.selectedItem.toString()
-                val usuarioModel = UsuarioModel(idUsuario, nombres, email, fechaNac, sexo)
+                val usuarioModel = UsuarioModel(usuario?.id, nombres, email, sexo, fechaNac)
                 val x = daoUsuarios.editarUsuario(usuarioModel)
                 if (x > 0) {
                     Toast.makeText(requireContext(), "Se editó correctamente", Toast.LENGTH_LONG).show()

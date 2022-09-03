@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.core.view.MenuProvider
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -14,6 +15,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.cmontero.tallerdpmkotlin.databinding.ActivityMainBinding
+import com.cmontero.tallerdpmkotlin.utils.Constantes
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
@@ -55,7 +57,8 @@ class MainActivity : AppCompatActivity() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.action_addUser -> {
-                        navController.navigate(R.id.nav_newusuario)
+                        val bundle = bundleOf(Constantes.MODO_EDICION to false, Constantes.OBJ_USUARIO to null)
+                        navController.navigate(R.id.nav_newusuario, bundle)
                         true
                     }
                     else -> false
