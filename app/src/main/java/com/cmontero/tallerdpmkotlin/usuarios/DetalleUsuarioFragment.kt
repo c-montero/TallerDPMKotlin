@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.cmontero.tallerdpmkotlin.R
-import com.cmontero.tallerdpmkotlin.databinding.FragmentDetalleBinding
+import com.cmontero.tallerdpmkotlin.databinding.FragmentDetalleusuarioBinding
 import com.cmontero.tallerdpmkotlin.utils.Constantes
 
 
-class DetalleFragment : Fragment() {
+class DetalleUsuarioFragment : Fragment() {
 
-    private var _binding: FragmentDetalleBinding? = null
+    private var _binding: FragmentDetalleusuarioBinding? = null
     private val binding get() = _binding!!
     private lateinit var usuario: UsuarioModel
 
@@ -25,7 +25,7 @@ class DetalleFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
-        _binding = FragmentDetalleBinding.inflate(inflater, container, false)
+        _binding = FragmentDetalleusuarioBinding.inflate(inflater, container, false)
         return binding.root
     }
 

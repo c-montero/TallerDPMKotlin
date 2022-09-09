@@ -65,7 +65,7 @@
         tools:layout="@layout/fragment_newusuario" />
     <fragment
         android:id="@+id/detalleFragment"
-        android:name="com.cmontero.tallerdpmkotlin.usuarios.DetalleFragment"
+        android:name="com.cmontero.tallerdpmkotlin.usuarios.DetalleUsuarioFragment"
         android:label="fragment_detalle"
-        tools:layout="@layout/fragment_detalle" />
+        tools:layout="@layout/fragment_detalleusuario" />
 </navigation>

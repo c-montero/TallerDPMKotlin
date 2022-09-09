@@ -30,6 +30,7 @@
         android:layout_marginEnd="16dp"
         android:contentDescription="cocteles"
         android:minHeight="48dp"
+        app:layout_constraintWidth_percent="0.7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBuscar" />
@@ -42,8 +43,8 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:text="Buscar Cocteles"
+        app:layout_constraintWidth_percent="0.7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
