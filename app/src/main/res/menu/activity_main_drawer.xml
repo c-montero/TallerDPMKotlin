@@ -32,5 +32,9 @@
             android:id="@+id/nav_mapas"
             android:icon="@drawable/ic_map"
             android:title="Mapas" />
+        <item
+            android:id="@+id/nav_camara"
+            android:icon="@drawable/ic_camera"
+            android:title="Camara" />
     </group>
 </menu>

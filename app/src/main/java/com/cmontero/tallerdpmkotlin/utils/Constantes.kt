@@ -11,4 +11,5 @@ object Constantes {
 
     const val ID_COCTEL = "idCoctel"
     const val URL_IMAGEN = "urlImagenCoctel"
+
 }

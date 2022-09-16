@@ -1,6 +1,7 @@
 package com.cmontero.tallerdpmkotlin.mapas
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
@@ -83,6 +84,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
                 ContextCompat.checkSelfPermission(requireContext(), COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
     }
 
+    @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap) {
         this.map = googleMap
 
@@ -161,15 +163,16 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+    @SuppressLint("MissingPermission")
     private fun isNetworkAvailable(): Boolean {
         try {
             val connectivityManager = requireActivity().getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
             val network = connectivityManager.activeNetwork ?: return false
-            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            val networkCapabilities = connectivityManager.getNetworkCapabilities(network) ?: return false
             return when{
-                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)->true
-                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)->true
-                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)->true
+                networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)->true
+                networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)->true
+                networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)->true
                 else->false
             }
         } catch (e: java.lang.Exception) {
@@ -179,6 +182,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     }
 
 
+    @SuppressLint("MissingPermission")
     private fun getMyLocation() {
         try {
             if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
@@ -191,7 +195,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
                 if (location != null) {
                     lastLocation = location
                     miUbicacion = LatLng(lastLocation!!.latitude, lastLocation!!.longitude)
-                    colocarMarcador(miUbicacion)
+                    map.addMarker(MarkerOptions().position(miUbicacion).title("Aqui estoy"))
                 }
             }
         } catch (e: Exception) {
@@ -199,12 +203,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-
-    private fun colocarMarcador(posicion: LatLng) {
-        map.addMarker(MarkerOptions().position(posicion))
-    }
-
-    private fun centrarMarcadores(listaMarcadores: List<Marker>) {
+     private fun centrarMarcadores(listaMarcadores: List<Marker>) {
 
         val constructor = LatLngBounds.Builder()
         for (marker in listaMarcadores) {

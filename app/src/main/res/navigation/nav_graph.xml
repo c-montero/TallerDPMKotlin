@@ -27,13 +27,17 @@
             app:destination="@id/nav_newusuario" />
         <action
             android:id="@+id/action_nav_usuarios_to_detalleFragment"
-            app:destination="@id/detalleFragment" />
+            app:destination="@id/detalleUserFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_cocteles"
         android:name="com.cmontero.tallerdpmkotlin.cocteles.CoctelesFragment"
         android:label="Cocteles"
-        tools:layout="@layout/fragment_cocteles" />
+        tools:layout="@layout/fragment_cocteles" >
+        <action
+            android:id="@+id/action_nav_cocteles_to_detalleCoctelFragment"
+            app:destination="@id/detalleCoctelFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_login"
         android:name="com.cmontero.tallerdpmkotlin.login.LoginFragment"
@@ -51,7 +55,7 @@
     <fragment
         android:id="@+id/nav_lectorqr"
         android:name="com.cmontero.tallerdpmkotlin.lectorqr.LectorQRFragment"
-        android:label="fragment_lectorqr"
+        android:label="Lector QR"
         tools:layout="@layout/fragment_lectorqr" />
     <fragment
         android:id="@+id/nav_mapas"
@@ -64,8 +68,18 @@
         android:label="Agregar Usuario"
         tools:layout="@layout/fragment_newusuario" />
     <fragment
-        android:id="@+id/detalleFragment"
+        android:id="@+id/detalleUserFragment"
         android:name="com.cmontero.tallerdpmkotlin.usuarios.DetalleUsuarioFragment"
-        android:label="fragment_detalle"
+        android:label="Detalle Usuario"
         tools:layout="@layout/fragment_detalleusuario" />
+    <fragment
+        android:id="@+id/detalleCoctelFragment"
+        android:name="com.cmontero.tallerdpmkotlin.cocteles.DetalleCoctelFragment"
+        android:label="Detalle Coctel"
+        tools:layout="@layout/fragment_detallecoctel" />
+    <fragment
+        android:id="@+id/nav_camara"
+        android:name="com.cmontero.tallerdpmkotlin.camara.CamaraFragment"
+        android:label="fragment_camara"
+        tools:layout="@layout/fragment_camara" />
 </navigation>

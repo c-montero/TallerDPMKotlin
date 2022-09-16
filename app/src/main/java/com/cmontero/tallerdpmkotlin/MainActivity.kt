@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.core.view.MenuProvider
@@ -15,9 +17,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.cmontero.tallerdpmkotlin.databinding.ActivityMainBinding
+import com.cmontero.tallerdpmkotlin.databinding.NavHeaderMainBinding
 import com.cmontero.tallerdpmkotlin.utils.Constantes
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -35,13 +37,18 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarMain.toolbar)
 
 
+       /* val bindingNav = NavHeaderMainBinding.inflate(layoutInflater)
+        bindingNav.txtNameUser.text = "Juan Perez"*/
+
+
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         navController = findNavController(R.id.navHostFragment)
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_basicos, R.id.nav_recyclerview, R.id.nav_usuarios, R.id.nav_cocteles, R.id.nav_lectorqr, R.id.nav_login, R.id.nav_mapas
+                R.id.nav_basicos, R.id.nav_recyclerview, R.id.nav_usuarios, R.id.nav_cocteles, R.id.nav_lectorqr, R.id.nav_login, R.id.nav_mapas, R.id.nav_camara
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -66,6 +73,13 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        val user1 = navigationView.getHeaderView(0).findViewById<TextView>(R.id.txtNameUser1)
+        val user2 = navigationView.getHeaderView(0).findViewById<TextView>(R.id.txtNameUser2)
+        user1.text = "Bienvenido"
+        user2.text = "Juan Perez"
+
     }
 
 

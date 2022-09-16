@@ -5,9 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.cmontero.tallerdpmkotlin.R
+import com.cmontero.tallerdpmkotlin.utils.Constantes
 
 class CoctelAdapter(private val coctelList:List<CoctelModel>):
     RecyclerView.Adapter<CoctelAdapter.ViewHolder>() {
@@ -32,7 +36,8 @@ class CoctelAdapter(private val coctelList:List<CoctelModel>):
             .into(holder.img)
 
         holder.itemView.setOnClickListener{
-
+            val bundle = bundleOf(Constantes.ID_COCTEL to coctelList[position].idDrink, Constantes.URL_IMAGEN to urlImagenCoctel)
+            Navigation.findNavController(holder.itemView).navigate(R.id.detalleCoctelFragment, bundle)
         }
 
     }
