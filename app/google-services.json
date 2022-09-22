@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "825824741631",
+    "firebase_url": "https://tallerdpmkotlin-default-rtdb.firebaseio.com",
+    "project_id": "tallerdpmkotlin",
+    "storage_bucket": "tallerdpmkotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825824741631:android:8e9d0f170073bf66e324ca",
+        "android_client_info": {
+          "package_name": "com.cmontero.tallerdpmkotlin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "825824741631-srqaqdr0o8p44tahe59huvqed24ttifs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD19BAxxhHiY6Z-oK7pb0HFMGqbP7ufQtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "825824741631-srqaqdr0o8p44tahe59huvqed24ttifs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

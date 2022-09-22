@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_basicos"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_basicos" />
+        <item
+            android:id="@+id/nav_recyclerview"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_recyclerview" />
+        <item
+            android:id="@+id/nav_usuarios"
+            android:icon="@drawable/ic_people"
+            android:title="SQLite" />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_login"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_cocteles"
+            android:icon="@drawable/ic_wine"
+            android:title="Servicios" />
+        <item
+            android:id="@+id/nav_lectorqr"
+            android:icon="@drawable/ic_qr_code_scanner"
+            android:title="Lector QR" />
+        <item
+            android:id="@+id/nav_mapas"
+            android:icon="@drawable/ic_map"
+            android:title="Mapas" />
+        <item
+            android:id="@+id/nav_camara"
+            android:icon="@drawable/ic_camera"
+            android:title="Camara" />
+        <item
+            android:id="@+id/nav_realtime"
+            android:icon="@drawable/ic_fire"
+            android:title="Realtime Database" />
+    </group>
+</menu>
